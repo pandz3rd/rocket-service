@@ -20,7 +20,7 @@ public class AstronoutController {
 
     @GetMapping("display")
     public String displayResult(
-            @RequestParam String type,
+            @RequestParam(defaultValue = "NORMAL") String type,
             HttpServletRequest servletRequest) {
         Metadata metadata = MetadataUtil.constructMetadata(servletRequest);
         return astronoutService.displayResult(metadata, type);
